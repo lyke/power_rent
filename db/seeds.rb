@@ -8,6 +8,16 @@
 SuperPower.destroy_all
 User.destroy_all
 
+100.times do
+  restaurant = SuperPower.new(
+    name: Faker::Company.name,
+    description: Faker::Address.street_address,
+    price: rand(200..500),
+    user_id: User.all.sample.id
+  )
+  restaurant.save!
+end
+
 User.create(
   name: "Alexandra Delory",
   email: "alexandra@example.com",

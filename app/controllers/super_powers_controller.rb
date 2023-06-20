@@ -24,6 +24,7 @@ class SuperPowersController < ApplicationController
   def update
     @super_power = SuperPower.find(params[:id])
     @super_power.update(super_power_params)
+    redirect_to super_power_path(@super_power)
   end
 
   def destroy

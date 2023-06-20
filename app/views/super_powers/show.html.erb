@@ -1,4 +1,7 @@
 <h1><%= @super_power.name %></h1>
+<% if @super_power.poster_url.attached? %>
 <%= cl_image_tag @super_power.poster_url.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <p><%= @super_power.description %></p>
 <%= @super_power.price %>€
+<%= link_to "Update", edit_super_power_path %>
