@@ -1,4 +1,4 @@
 <h1><%= @super_power.name %></h1>
-<%# rajouter une image %>
+<%= cl_image_tag @super_power.poster_url.key, height: 300, width: 400, crop: :fill %>
 <p><%= @super_power.description %></p>
-<%= @super_power.price %>
+<%= @super_power.price %>€

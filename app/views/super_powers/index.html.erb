@@ -1,9 +1,14 @@
 
 <h1>Avalable Super Powers</h1>
 <% @super_powers.each do |super_power| %>
-<div>
-<%= super_power.name %>
+<div class="container">
+<div class="card">
+<%= cl_image_tag super_power.poster_url.key, height: 300, width: 400, crop: :fill %>
+<%= link_to super_power.name, super_power_path(super_power) %>
 <%= super_power.description %>
-<%= super_power.price %>
-<% end %>
+<%= super_power.price %>€
+<%= link_to "Delete", super_power_path(super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 </div>
+</div>
+<% end %>
+<%= link_to "Create new Super Power",  new_super_power_path %>
