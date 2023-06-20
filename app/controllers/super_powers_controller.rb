@@ -14,7 +14,7 @@ class SuperPowersController < ApplicationController
   def create
     @super_power = SuperPower.new(super_power_params)
     @super_power.save!
-    redirect_to super_power_path
+    redirect_to super_powers_path
   end
 
   def edit
@@ -27,6 +27,9 @@ class SuperPowersController < ApplicationController
   end
 
   def destroy
+    @super_power = SuperPower.find(params[:id])
+    @super_power.destroy
+    redirect_to super_power_path(@super_power), status: :see_other
   end
 
   private
