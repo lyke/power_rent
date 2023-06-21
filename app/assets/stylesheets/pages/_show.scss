@@ -1,0 +1,32 @@
+.image_tag {
+  height: 50px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.container {
+  display: flex;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+.list-inline {
+	list-style: none;
+	// margin-left: 0;
+	// padding-left: 0;
+  padding: 5px;
+}
+
+.list-inline > li {
+	display: inline-block;
+}
+
+h3 {
+padding-top: 10px;
+}
+
+h2{
+  font-size: 20px;
+}
