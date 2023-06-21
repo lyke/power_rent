@@ -20,7 +20,7 @@ User.create(
     name: Faker::Company.name,
     description: Faker::Address.street_address,
     price: rand(200..500),
-    user_id: User.all.sample.id
+    user: User.last
   )
   super_power.save!
 end
