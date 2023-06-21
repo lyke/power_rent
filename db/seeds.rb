@@ -19,7 +19,7 @@ User.create(
 10.times do
   super_power1 = SuperPower.new(
     name: Faker::Movie.title,
-    description: Faker::Shakespeare.hamlet_quote,
+    description: Faker::Movie.title,
     price: rand(200..500),
     user: User.last
   )
