@@ -1,7 +1,7 @@
 
 <%# <div class="navbar-brand"><h1>Available Super Powers</h1></div> %>
 <div>
-  <div class="navbar navbar-expand-sm navbar-lewagon bg-color-rouge">
+  <%# <div class="navbar navbar-expand-sm navbar-lewagon bg-color-rouge">
     <div class="container-fluid">
       <div>
         <p class="navbar-brand add-power"><%= link_to "+ Super Power",  new_super_power_path %></p>
@@ -37,7 +37,7 @@
 
       </div>
     </div>
-  </div>
+  </div> %>
 <div class="index-grid">
     <% @super_powers.each do |super_power| %>
     <div class="card" style="width: 29rem";>
@@ -62,7 +62,7 @@
             <div class="btn-margin-padding ">
               <%= link_to "Delete", super_power_path(super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </div>
- 
+
         </div>
       </div>
     </div>
