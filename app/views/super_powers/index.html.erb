@@ -1,17 +1,65 @@
 
-<h1>Available Super Powers</h1>
-<div>
+<%# <div class="navbar-brand"><h1>Available Super Powers</h1></div> %>
+
+<div class="navbar navbar-expand-sm navbar-lewagon bg-color-rouge">
+  <div class="container-fluid">
+    <div>
+    <a class="navbar-brand add-power" href="#">+ Super Power</a>
+    </div>
+    <h1 class="powerent">POWERENT</h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">☆</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">♀︎</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">🛒</a>
+          </li>
+      </ul>
+          <%# <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+            </div>
+          </li> %>
+          <!--li class="nav-item"-->
+          <!--/li-->
+
+    </div>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem";>
 <% @super_powers.each do |super_power| %>
 <div class="container">
-  <div class="card col-lg-4 d-flex">
-    <div class="p-3">
+  <div class=>
+    <div class=>
     <% if super_power.poster_url.attached? %>
+    <div class="card-img-top">
       <%= cl_image_tag super_power.poster_url.key, height: 300, width: 400, crop: :fill %>
+    </div>
       <% end %>
+      <div class="card-title">
       <%= link_to super_power.name, super_power_path(super_power) %>
-      <%= super_power.description %>
-      <%= super_power.price %>€
+
+      <%# <div class="card-text">
+      <%= super_power.description %> %>
+
+      <%= super_power.price %>
+
+      <div btn btn-primary>
       <%= link_to "Delete", super_power_path(super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+
     </div>
   </div>
 </div>

@@ -25,7 +25,7 @@ User.create(
   super_power.save!
 end
 SuperPower.create([
-    { name: "Fire control", description: "You'll be able to control fire, burn the city and all your enemies", price: 200, user_id: User.all.sample.id },
+    { name: "Fire control", description: "You'll be able to control fire, burn the city and all your enemies", price: 200, user_id: User.all.sample.id,  },
     { name: "Walk on water", description: "You'll be like your idol Jesus", price: 300, user_id: User.all.sample.id },
     { name: "Breathe in the water", description: "Because drowning is not fun", price: 400, user_id: User.all.sample.id },
     { name: "Invisibility robe", description: "To have the opportunity to slap your haters without them knowing", price: 350, user_id: User.all.sample.id }

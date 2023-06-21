@@ -13,6 +13,12 @@ class SuperPowersController < ApplicationController
 
   def create
     @super_power = SuperPower.new(super_power_params)
+    # Si une session est en cours
+    @super_power.user = current_user
+    # current_user
+    # Sinon
+    # Redirection vers la page de connexion
+    # end
     @super_power.save!
     redirect_to super_powers_path
   end
