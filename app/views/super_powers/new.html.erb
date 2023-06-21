@@ -1,21 +1,28 @@
-<div class="container">
+<div class="container-new">
 <h1>Add my super power !</h1>
 
-<div class="card">
+
+<div class="container-name">
   <%= simple_form_for @super_power do |f| %>
+<div class="element1">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+   <p class="rectangle"><%= f.text_field :name %></p>
     <%= f.label :price %>
-    <%= f.text_field :price %>
+    <p class="rectangle"><%= f.text_field :price %></p>
+    </div>
+    <div class="element2">
     <%= f.input :poster_url, as: :file %>
-  </div>
-  <div class="card2">
+    </div>
+</div>
+
+<div class="container-description">
     <%= f.label :description %>
-    <%= f.text_field :description %>
-    </div>
-    <div class="card3">
-    <%= f.submit %>
-    </div>
+   <p class="rectangle-des"> <%= f.text_field :description %></p>
+</div>
+
+<div class="container-button">
+   <p class="button"><%= f.submit %></p>
+</div>
+</div>
   <% end %>
   <%= link_to "Back to list", super_powers_path %>
-</div>
