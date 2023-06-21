@@ -8,15 +8,6 @@
 SuperPower.destroy_all
 User.destroy_all
 
-100.times do
-  restaurant = SuperPower.new(
-    name: Faker::Company.name,
-    description: Faker::Address.street_address,
-    price: rand(200..500),
-    user_id: User.all.sample.id
-  )
-  restaurant.save!
-end
 
 User.create(
   name: "Alexandra Delory",
@@ -24,6 +15,15 @@ User.create(
   password: "password"
 )
 
+100.times do
+  super_power = SuperPower.new(
+    name: Faker::Company.name,
+    description: Faker::Address.street_address,
+    price: rand(200..500),
+    user_id: User.all.sample.id
+  )
+  super_power.save!
+end
 SuperPower.create([
     { name: "Fire control", description: "You'll be able to control fire, burn the city and all your enemies", price: 200, user_id: User.all.sample.id },
     { name: "Walk on water", description: "You'll be like your idol Jesus", price: 300, user_id: User.all.sample.id },
