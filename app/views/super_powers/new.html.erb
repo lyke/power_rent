@@ -4,25 +4,25 @@
 
 <div class="container-name">
   <%= simple_form_for @super_power do |f| %>
-<div class="element1">
-    <%= f.label :name %>
-   <p class="rectangle"><%= f.text_field :name %></p>
-    <%= f.label :price %>
-    <p class="rectangle"><%= f.text_field :price %></p>
+    <div class="element1">
+      <%= f.label :name %>
+      <p class="rectangle"><%= f.text_field :name %></p>
+      <%= f.label :price %>
+      <p class="rectangle"><%= f.text_field :price %></p>
+      <div class="element2">
+        <%= f.input :poster_url, as: :file %>
+      </div>
     </div>
-    <div class="element2">
-    <%= f.input :poster_url, as: :file %>
+
+    <div class="container-description">
+      <%= f.label :description %>
+      <p class="rectangle-des"> <%= f.text_field :description %></p>
     </div>
-</div>
 
-<div class="container-description">
-    <%= f.label :description %>
-   <p class="rectangle-des"> <%= f.text_field :description %></p>
-</div>
-
-<div class="container-button">
-   <p class="button"><%= f.submit %></p>
-</div>
-</div>
+    <div class="container-button">
+      <p class="button"><%= f.submit %></p>
+    </div>
   <% end %>
-  <%= link_to "Back to list", super_powers_path %>
+</div>
+
+<%= link_to "Back to list", super_powers_path %>
