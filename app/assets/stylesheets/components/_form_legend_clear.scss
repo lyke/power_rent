@@ -10,14 +10,13 @@ legend ~ div.form-check:first-of-type {
 }
 
 h1{
-font-style: normal;
-font-weight: 500;
-font-size: 64px;
-line-height: 96px;
-display: flex;
-align-items: center;
-
-color: #B6B5FF;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 96px;
+  // display: flex;
+  align-items: center;
+  color: #B6B5FF;
 }
 
 
@@ -32,7 +31,6 @@ color: #B6B5FF;
   color: #B6B5FF;
   display: flex;
   align-items: center;
-  display: flex;
   justify-content: center;
 }
 
