@@ -43,14 +43,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_103651) do
   end
 
   create_table "super_powers", force: :cascade do |t|
-    t.string "description"
-    t.string "name"
-    t.float "rating"
+    t.text "name"
+    t.text "description"
+    t.string "integer"
+    t.integer "rating"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "poster_url"
     t.integer "price"
-    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_super_powers_on_user_id"
   end
 

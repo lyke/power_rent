@@ -1,7 +1,21 @@
-<h1><%= @super_power.name %></h1>
+<div class="container">
+<div class="table">
+<h1><strong><%= @super_power.name %></strong></h1>
+<%# <%= image_tag , class: "image_tag", "invisible.png", alt: "invisible" %>
+<%= @super_power.poster_url %>
 <% if @super_power.poster_url.attached? %>
-<%= cl_image_tag @super_power.poster_url.key, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @super_power.poster_url.key, height: 300, width: 400 %>
 <% end %>
-<p><%= @super_power.description %></p>
+<h3>Why?</h3>
+ <p><%= @super_power.description %></p>
+</div>
+<div class="table">
 <%= @super_power.price %>€
-<%= link_to "Update", edit_super_power_path %>
+<hr class="line">
+<a href="https://www.w3docs.com/" class="button-1">Reserve</a>
+
+<%= link_to "Update", edit_super_power_path, class: "button-1" %>
+</div>
+</div>
+<hr class="bottom_line">
+<h2><strong>Reviews</strong></h2>
