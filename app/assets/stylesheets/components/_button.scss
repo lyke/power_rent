@@ -3,7 +3,6 @@
 .button-1 {
   background-color: #FF7070;
   border-radius: 8px;
-  border-style: none;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
@@ -25,11 +24,14 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  border-color: #FFFFFF;
 }
 
 .button-1:hover,
 .button-1:focus {
-  background-color: #F082AC;
+  background-color: white;
+  color: #FF7070;
+  border-color: #FF7070;
 }
 
 .btn-margin-padding {
@@ -39,4 +41,3 @@
   border-radius: 50px;
   color :white;
 }
-

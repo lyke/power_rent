@@ -37,13 +37,16 @@ nav a {
 }
 
 .table1 {
-  padding: 40px;
-  margin-top: 30px;
+  padding: 30px;
+  margin-top: 20px;
+  max-width: 55%;
 }
 
 .table2 {
-  padding: 40px;
-  margin-top: 30px;
+  padding: 30px;
+  margin-top: 20px;
+  max-width: 45%;
+  padding-top: 10%;
 }
 
 h3 {
@@ -59,5 +62,30 @@ h3 {
 }
 
 .container {
+  // align-items: center;
+  max-width: 1300px;
+}
+
+.image-rounded {
+width: 650px;
+height: 500px;
+border-radius: 3%;
+}
+
+.after-photo {
+  margin-top: 20px;
+  color: #B6B5FF;
+}
+
+.rented {
+  color: #B6B5FF;
+}
+
+.reviews {
   align-items: center;
+}
+
+p {
+  text-align: justify;
+  margin-top: 30px;
 }
