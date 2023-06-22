@@ -1,0 +1,17 @@
+<h1>My Profile</h1>
+<div class="d-flex">
+<h3>Name : <%= current_user.name %></h3>
+</div>
+<h2>My Reservations</h2>
+<%# <% @my_reservations = current_user.resevation.each do |my_reservation| %> %>
+<%# <ul> %>
+  <%# <li><%= my_reservation.name %></li> %>
+  <%# <% end %> %>
+<%# </ul> %>
+
+<h2>My Super-Powers</h2>
+<% @super_powers.where(user_id: current_user.id).each do |super_power| %>
+<ul>
+<li><h3><%= super_power.name %></h3><p><%= super_power.description %></p></li>
+</ul>
+<% end %>
