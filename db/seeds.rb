@@ -35,6 +35,4 @@ end
 #       { name: "Invisibility robe", description: "To have the opportunity to slap your haters without them knowing", price: 350, user: User.last }
 #       ])
 
-
-
 puts "c'est cool "

@@ -4,4 +4,14 @@ class SuperPower < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   has_one_attached :poster_url
+  include PgSearch::Model
+
+  pg_search_scope :global_search,
+  against: [ :name, :description ],
+  associated_against: {
+    user: [:name]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
 end
