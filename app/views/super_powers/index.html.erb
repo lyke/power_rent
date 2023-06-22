@@ -1,11 +1,17 @@
 
-<h1 class="sentence">Unlock Your SuperPower !</h1>
-<nav class="navbar navbar-light bg-light">
-  <form class="form-inline d-flex sentence">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search SuperPower" aria-label="Search">
-    <button class="btn-margin-padding my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
+<div class="row justify-content-center pt-3">
+  <div>
+    <%= form_with url: super_powers_path, method: :get, class: "form-inline d-flex sentence search-bar-width" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control mr-sm-2",
+        placeholder: "Search Super Power"
+       %>
+      <%= submit_tag "Search", name: "", class: "btn-margin-padding my-2 my-sm-0" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="index-grid power-card">
     <% @super_powers.each do |super_power| %>
     <div class="card" style="width: 29rem";>
