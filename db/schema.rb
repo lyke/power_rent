@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_20_103651) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_22_125043) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_103651) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "price"
+    t.date "beginning_date"
+    t.date "ending_date"
+    t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "super_power_id"
+    t.index ["super_power_id"], name: "index_reservations_on_super_power_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "super_powers", force: :cascade do |t|

@@ -4,4 +4,5 @@ class SuperPower < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   has_one_attached :poster_url
+  has_many :reservations
 end

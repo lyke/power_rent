@@ -5,6 +5,7 @@ class SuperPowersController < ApplicationController
 
   def show
     @super_power = SuperPower.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
