@@ -41,7 +41,7 @@ class SuperPowersController < ApplicationController
   def destroy
     @super_power = SuperPower.find(params[:id])
     @super_power.destroy
-    redirect_to super_power_path(@super_power), status: :see_other
+    redirect_to super_powers_path, status: :see_other
   end
 
   private

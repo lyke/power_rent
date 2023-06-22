@@ -28,14 +28,10 @@
             <%= link_to super_power.name, super_power_path(super_power) %>
             </div>
             <div class="card-text">
-              <%= super_power.description %>
+              <%= super_power.description.first(300) + "..." %>
             </div>
 
-            <h2><%= super_power.price %>€</h2>
-
-            <div class="btn-margin-padding ">
-              <%= link_to "Delete", super_power_path(super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "white-btn" %>
-            </div>
+            <h2 class="card-price"><%= super_power.price %>€</h2>
 
         </div>
       </div>
