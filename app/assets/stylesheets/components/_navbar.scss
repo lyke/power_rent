@@ -15,18 +15,16 @@
 }
 .add-power {
   color: #FFFFFF;
-  width: 288px;
-  height: 29px;
+  width: 200px;
   left: 1169px;
   top: 40px;
   background-color: #B6B5FF;
   font-style: normal;
-  font-weight: 800;
   font-size: 24px;
   line-height: 29px;
-  border: 1px solid black;
   border-radius: 50px;
   margin: auto;
+  text-align: center;
 }
 .powerent {
   width: 247px;
@@ -41,4 +39,12 @@
   line-height: 44px;
 
   color: #FFFFFF;
+}
+
+.icon {
+  font-size: 30px;
+}
+
+.sentence {
+  margin-left: 8px;
 }

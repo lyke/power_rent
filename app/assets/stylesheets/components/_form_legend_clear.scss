@@ -11,53 +11,74 @@ legend ~ div.form-check:first-of-type {
 
 h1{
   font-style: normal;
-  font-weight: 500;
-  font-size: 64px;
+  font-weight: 550;
+  font-size: 180px;
   line-height: 96px;
-  // display: flex;
-  align-items: center;
-  color: #B6B5FF;
-}
-
-
-.card{
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  padding: 20px;
-  width: 300px;
-  margin: 0 auto;
   color: #B6B5FF;
   display: flex;
   align-items: center;
+}
+
+.rectangle{
+  input {
+  width: 70rem;
+  height: 55px;
+  background: #E6E6E6;
+  border-radius: 8px;
+  }
+}
+
+.rectangle-des{
+input {
+width: 70rem;
+// height: 100px;
+background: #E6E6E6;
+border-radius: 7px;
+}
+}
+
+.container-new{
+ margin: 20px;
+}
+
+.button{
+  input {
+  background-color: #FF7070;
+  justify-content: center;
+  border-radius: 10px;
+  color: #FFFFFF;
+}
+  display: flex;
   justify-content: center;
 }
 
-.card2{
+.container-name{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 54px;
+  color: #B6B5FF;
+}
+
+.element1{
+  float: right;
+}
+
+.element2{
+  float: left;
+}
+
+.container-description{
+width: 635px;
+height: 60px;
 font-style: normal;
-font-weight: 300;
-font-size: 40px;
-line-height: 60px;
+font-weight: 400;
+font-size: 20px;
 color: #B6B5FF;
 }
 
-
-.card3{
-
-width: 330px;
-height: 82px;
-
-background: #FF7070;
-border-radius: 10px;
-
-width: 237px;
-height: 48px;
-
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 48px;
-
-color: #FFFFFF;
+.form-cont {
+  justify-content: center;
+  display: flex;
+  padding-top: 40px;
 }
