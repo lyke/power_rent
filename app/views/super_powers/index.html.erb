@@ -1,52 +1,50 @@
+<div class="container-new">
+<h1>Add my super power !</h1>
 
-<%# <div class="navbar-brand"><h1>Available Super Powers</h1></div> %>
-<div>
-  <%# <div class="navbar navbar-expand-sm navbar-lewagon bg-color-rouge">
-    <div class="container-fluid">
-      <div>
-        <p class="navbar-brand add-power"><%= link_to "+ Super Power",  new_super_power_path %></p>
-        <%# <a class="navbar-brand add-power" href="#">+ Super Power</a> %>
-      </div>
-      <h1 class="powerent">POWERENT</h1>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">☆</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">♀︎</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">🛒</a>
-            </li>
-        </ul>
-            <%# <li class="nav-item dropdown">
-              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-              </div>
-            </li> %>
-            <!--li class="nav-item"-->
-            <!--/li-->
-
+<div class="container-name">
+  <%= simple_form_for @super_power do |f| %>
+    <div class="element1">
+      <%= f.label :name %>
+      <p class="rectangle"><%= f.text_field :name %></p>
+      <%= f.label :price %>
+      <p class="rectangle"><%= f.text_field :price %></p>
+      <div class="element2">
+        <%= f.input :poster_url, as: :file %>
       </div>
     </div>
-  </div> %>
-<div class="index-grid">
+
+    <div class="container-description">
+      <%= f.label :description %>
+      <p class="rectangle-des"> <%= f.text_field :description %></p>
+    </div>
+
+    <div class="container-button">
+      <p class="button"><%= f.submit %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Back to list", super_powers_path %>
+
+
+
+<h1 class="sentence">Unlock Your SuperPower !</h1>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline d-flex sentence">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search SuperPower" aria-label="Search">
+    <button class="btn-margin-padding my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<div class="index-grid power-card">
     <% @super_powers.each do |super_power| %>
     <div class="card" style="width: 29rem";>
       <div class="container">
         <div >
 
-            <div class="card-img-top card_power">
+            <div class="card-img-top card_power pt-2 p-auto">
               <% if super_power.poster_url.attached? %>
-                <%= cl_image_tag super_power.poster_url.key, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag super_power.poster_url.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
               <% end %>
             </div>
 
@@ -60,7 +58,7 @@
             <h2><%= super_power.price %>€</h2>
 
             <div class="btn-margin-padding ">
-              <%= link_to "Delete", super_power_path(super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+              <%= link_to "Delete", super_power_path(super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "white-btn" %>
             </div>
 
         </div>
@@ -68,9 +66,4 @@
     </div>
     <% end %>
   </div>
-
-
-</div>
-<div>
-  <%= link_to "+ Super Power",  new_super_power_path %>
 </div>
