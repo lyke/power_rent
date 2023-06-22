@@ -21,7 +21,8 @@
 
     <%= link_to "Update", edit_super_power_path, class: "button-1" %>
     <% if @super_power.user_id == current_user.id %>
-    <%= link_to "Delete", super_power_path(@super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button-1" %>
+      <%= link_to "Delete", super_power_path(@super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button-1" %>
+    <% end %>
     <%= simple_form_for [@super_power, @reservation], data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :beginning_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } }%>
         <%= f.input :ending_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
