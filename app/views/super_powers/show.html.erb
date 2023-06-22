@@ -17,10 +17,19 @@
     </nav>
    <p class="price"> <%= @super_power.price %> €</p>
     <hr class="line">
-    <a href="https://www.w3docs.com/" class="button-1">Reserve</a>
+
     <%= link_to "Update", edit_super_power_path, class: "button-1" %>
+
   </div>
+
+ <%= simple_form_for [@super_power, @reservation]  do |f| %>
+      <%= f.input :beginning_date%>
+      <%= f.input :ending_date%>
+      <%= f.submit "Reserve" %>
+  <% end %>
+
 </div>
+
 
 <div class="reviews justify-content-center">
   <hr class="bottom_line">
