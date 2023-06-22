@@ -1,6 +1,10 @@
 class SuperPowersController < ApplicationController
   def index
-    @super_powers = SuperPower.all
+    if params['query'].present?
+      @super_powers = SuperPower.global_search(params['query'])
+    else
+      @super_powers = SuperPower.all
+    end
   end
 
   def show
