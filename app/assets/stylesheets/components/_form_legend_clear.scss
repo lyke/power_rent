@@ -21,7 +21,7 @@ h1{
 
 .rectangle{
   input {
-  width: 721px;
+  width: 70rem;
   height: 55px;
   background: #E6E6E6;
   border-radius: 8px;
@@ -30,8 +30,8 @@ h1{
 
 .rectangle-des{
 input {
-width: 1200px;
-height: 100px;
+width: 70rem;
+// height: 100px;
 background: #E6E6E6;
 border-radius: 7px;
 }
@@ -75,4 +75,10 @@ font-style: normal;
 font-weight: 400;
 font-size: 20px;
 color: #B6B5FF;
+}
+
+.form-cont {
+  justify-content: center;
+  display: flex;
+  padding-top: 40px;
 }

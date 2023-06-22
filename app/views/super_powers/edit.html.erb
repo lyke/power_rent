@@ -1,10 +1,23 @@
-<%= simple_form_for @super_power do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= f.input :poster_url, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="form-cont">
+  <%= simple_form_for @super_power do |f| %>
+    <div class="form-group rectangle">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group rectangle-des">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    <div class="form-row">
+      <div class="form-group rectangle col-md-6">
+        <%= f.label :price %>
+        <%= f.text_field :price, class: "form-control" %>
+      </div>
+      <div class="form-group rectangle col-md-6">
+        <%= f.input :poster_url, as: :file %>
+        <%= f.submit %>
+      </div>
+      <%= link_to "Back to list", super_powers_path %>
+    </div>
+  <% end %>
+</div>
