@@ -1,25 +1,26 @@
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-around">
   <div class="table1">
     <h1><strong><%= @super_power.name %></strong></h1>
     <% if @super_power.poster_url.attached? %>
-      <%= cl_image_tag @super_power.poster_url.key, height: 300, width: 400 %>
+      <%= cl_image_tag @super_power.poster_url.key, class: "image-rounded" %>
     <% end %>
-    <h3>Why?</h3>
+    <h3 class = "after-photo">Description</h3>
     <p><%= @super_power.description %></p>
   </div>
 
   <div class="table2">
-  <h2>Rented by:</h2>
-  <%= @super_power.user_id %>
+    <h2 class = "rented">Rented by:</h2>
+    <%= @super_power.user_id %>
     <nav>
-      <a href="#">Share ☆</a>
-      <a href="#">Save ☾ </a>
+      <a href="#">Share ⏎ </a>
+      <a href="#">Save ☆ </a>
     </nav>
-   <p class="price"> <%= @super_power.price %> €</p>
+
+    <p class="price"> <%= @super_power.price %> €</p>
     <hr class="line">
 
     <%= link_to "Update", edit_super_power_path, class: "button-1" %>
-
+    <%= link_to "Delete", super_power_path(@super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button-1" %>
   </div>
 
  <%= simple_form_for [@super_power, @reservation]  do |f| %>
@@ -28,10 +29,4 @@
       <%= f.submit "Reserve" %>
   <% end %>
 
-</div>
-
-
-<div class="reviews justify-content-center">
-  <hr class="bottom_line">
-  <h2><strong>Reviews</strong></h2>
 </div>
