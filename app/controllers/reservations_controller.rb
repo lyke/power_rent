@@ -1,7 +1,5 @@
 class ReservationsController < ApplicationController
-  # def show
-  #   @reservation = Reservation.find(params[:id])
-  # end
+
   def show
     @reservation = Reservation.find(params[:id])
   end
@@ -15,6 +13,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @super_power = SuperPower.find(params[:super_power_id])
     @reservation.user_id = current_user.id
+    # @super_power = SuperPower.find(params[:id])
     @reservation.super_power_id = params[:super_power_id]
     @reservation.price = @super_power.price
     @reservation.status = true
@@ -43,6 +42,6 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:name, :date, :time, :user_id, :superpower_id)
+    params.require(:reservation).permit(:beginning_date, :ending_date)
   end
 end

@@ -1,6 +1,10 @@
-<div class="container d-flex justify-content-around">
+<div class="container d-flex justify-content">
   <div class="table1">
-    <h1><strong><%= @super_power.name %></strong></h1>
+    <h1><%= @super_power.name %></h1>
+      <nav>
+      <a href="#">Share ⏎ </a>
+      <a href="#">Save ☆ </a>
+    </nav>
     <% if @super_power.poster_url.attached? %>
       <%= cl_image_tag @super_power.poster_url.key, class: "image-rounded" %>
     <% end %>
@@ -9,12 +13,10 @@
   </div>
 
   <div class="table2">
+
     <h2 class = "rented">Rented by:</h2>
-    <%= @super_power.user_id %>
-    <nav>
-      <a href="#">Share ⏎ </a>
-      <a href="#">Save ☆ </a>
-    </nav>
+    <%= @super_power.user.name %>
+
 
     <p class="price"> <%= @super_power.price %> €</p>
     <hr class="line">
@@ -23,10 +25,36 @@
     <% if @super_power.user_id == current_user.id %>
       <%= link_to "Delete", super_power_path(@super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "button-1" %>
     <% end %>
+    <div class="calendar">
     <%= simple_form_for [@super_power, @reservation], data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :beginning_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } }%>
         <%= f.input :ending_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
-        <%= f.submit "Reserve" %>
+        <%= f.submit "Reserve", class: "button-1" %>
     <% end %>
+    </div>
   </div>
 </div>
+
+<footer>
+<div class="footer">
+<h3 class="team">Our team</h3>
+<div class="row">
+  <img alt="Kevin" src="/assets/kevin.png", class="faces">
+  <img alt="Anastasia" src="/assets/nastya.png", class="faces">
+  <img alt="Louhane" src="/assets/louh.png", class="faces">
+  <img alt="Alexandra" src="/assets/alex.png", class="faces">
+</div>
+
+<div class="row">
+<ul>
+<li><a href="#">Contact us</a></li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+
+<div class="row">
+ © 2023 Superent - All rights reserved || Designed By: Roamly
+</div>
+</div>
+</footer>
