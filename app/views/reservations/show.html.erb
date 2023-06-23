@@ -1,20 +1,53 @@
-<div>
-  <h2>Reservation Request :</h2>
-  <%= @reservation.super_power.name %>
-<div class="d-flex">
-<h2>Date :</h2>
-<h2><%= @reservation.beginning_date %></h2>
-<h2>  -  </h2>
-<h2><%= @reservation.ending_date %></h2>
+<div class="container">
+  <div class ="request">
+    <h1>Reservation Request :</h1>
+    <%= @reservation.super_power.name %>
+  <div>
+    <%= cl_image_tag @reservation.super_power.poster_url.key, height: 300, width: 400, crop: :fill, class: "reservationphoto" %>
+    </div>
+  <div class="d-flex">
+  <h2>Date :</h2>
+  <h2><%= @reservation.beginning_date %></h2>
+  <h2>  -  </h2>
+  <h2><%= @reservation.ending_date %></h2>
+  </div>
+    <h2 class="dashboard-titles">Price Details</h2>
+    <%= @reservation.price %>€/Day
+
+  </div>
+  <div>
+  </div>
+  <h3 class="dashboard-titles">Reservation Asking by :</h3>
+  <%= @reservation.user.name %>
+ <div class>
+  <%= link_to "Let's Book", edit_super_power_path, class: "button-1" %>
+  </div>
+  </div>
+  </div>
 </div>
+<footer>
+<div class="footer">
+<h3 class="team">Our team</h3>
+<div class="row">
+  <img alt="Kevin" src="/assets/kevin.png", class="faces">
+  <img alt="Anastasia" src="/assets/nastya.png", class="faces">
+  <img alt="Louhane" src="/assets/louh.png", class="faces">
+  <img alt="Alexandra" src="/assets/alex.png", class="faces">
   <h2>Price Details</h2>
   <%= @reservation.price %>€/Day
   
 </div>
-  <h2>Let's Book</h2>
-<div>
-</div>
-<h3>Reservation Asking by :</h3>
-<%= @reservation.user.name %>
 
-<%= cl_image_tag @reservation.super_power.poster_url.key, height: 300, width: 400, crop: :fill %>
+<div class="row">
+<ul>
+<li><a href="#">Contact us</a></li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+
+<div class="row">
+ © 2023 Superent - All rights reserved || Designed By: Roamly
+</div>
+</div>
+</footer>
