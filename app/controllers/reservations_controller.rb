@@ -19,8 +19,12 @@ class ReservationsController < ApplicationController
     @reservation.status = true
     @reservation.beginning_date = params[:reservation][:beginning_date]
     @reservation.ending_date = params[:reservation][:ending_date]
-    @reservation.save!
-    # redirect_to super_power_reservation_path(@reservation)
+
+    if @reservation.save
+      redirect_to super_power_reservation_path(@super_power, @reservation)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
