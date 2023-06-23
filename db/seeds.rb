@@ -80,5 +80,10 @@ super_power9 = SuperPower.new(name: "Fire Control", description: "Fire Control i
 super_power9.poster_url.attach(io: file9, filename: "Fire Control", content_type: "image/jpg/png")
 super_power9.save!
 
-
+Reservation.create(
+  price: "300",
+  status: false,
+  user_id: 4,
+  super_power_id: 34
+)
 puts "c'est cool "
