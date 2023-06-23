@@ -4,6 +4,8 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "button";
+@import "footer";
+
 .card_power {
   display: block;
 }
@@ -31,7 +33,8 @@ a {
 .index-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 32px;
+  grid-gap: 34px;
+  margin-bottom: 100px;
 }
 
 .search-bar-width {
@@ -40,4 +43,10 @@ a {
 
 .card-price {
   padding-top: 15px;
+}
+
+.main {
+  margin-top: 20px;
+  color: #B6B5FF;
+  font-size: 45px;
 }

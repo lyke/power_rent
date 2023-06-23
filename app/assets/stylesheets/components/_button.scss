@@ -8,10 +8,10 @@
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
-  height: 40px;
-  line-height: 20px;
+  height: 50px;
+  // line-height: 20px;
   list-style: none;
   margin: 0;
   outline: none;
@@ -40,4 +40,7 @@
   background-color: #FF7070;
   border-radius: 50px;
   color :white;
+  margin-left: 20px;
+  padding: 10px;
+  width: 130px;
 }
