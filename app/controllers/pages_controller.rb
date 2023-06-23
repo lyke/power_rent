@@ -4,5 +4,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @super_powers = SuperPower.all
+    @reservations = Reservation.all
   end
 end

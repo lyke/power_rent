@@ -6,6 +6,35 @@
     <h2 class="p-3"><%= current_user.name%></h2>
     </div>
     <h2 class="dashboard-titles">My Reservations :</h2>
+
+    <div class="index-grid power-card">
+        <% @reservations.where(user_id: current_user.id).each do |reservation| %>
+        <div class="card" style="width: 29rem";>
+          <div class="container">
+            <div >
+
+                <div class="card-img-top card_power pt-2 p-auto">
+                  <% if reservation.super_power.poster_url.attached? %>
+                    <%= cl_image_tag reservation.super_power.poster_url.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
+                  <% end %>
+                </div>
+
+                <div class="card-title">
+                <%= link_to reservation.super_power.name, super_power_reservation_path(reservation, reservation.super_power) %>
+                </div>
+                <div class="card-text">
+                  <%= reservation.super_power.description.first(300) + "..." %>
+                </div>
+
+                <h2 class="card-price"><%= reservation.price %>€</h2>
+
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
     <%# <% @my_reservations = current_user.resevation.each do |my_reservation| %> %>
     <%# <ul> %>
       <%# <li><%= my_reservation.name %></li> %>

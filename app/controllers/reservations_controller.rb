@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @reservation = Reservation.find(params[:super_power_id])
   end
 
   def new
