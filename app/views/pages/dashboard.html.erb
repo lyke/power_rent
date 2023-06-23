@@ -1,9 +1,9 @@
 <div>
   <div class="container">
-    <h1>My Profile</h1>
-    <div class="d-flex dashboard-name">
+    <h1 class="justify-content-center">My Profile</h1>
+    <div class=" dashboard-name">
     <h2 class="dashboard-titles">Name :</h2>
-    <h2 class="p-3"><%= current_user.name%></h2>
+    <h2 class=><%= current_user.name%></h2>
     </div>
     <h2 class="dashboard-titles">My Reservations :</h2>
     <%# <% @my_reservations = current_user.resevation.each do |my_reservation| %> %>
@@ -43,3 +43,27 @@
     </div>
   </div>
 </div>
+
+<footer>
+<div class="footer">
+<h3 class="team">Our team</h3>
+<div class="row">
+  <img alt="Kevin" src="/assets/kevin.png", class="faces">
+  <img alt="Anastasia" src="/assets/nastya.png", class="faces">
+  <img alt="Louhane" src="/assets/louh.png", class="faces">
+  <img alt="Alexandra" src="/assets/alex.png", class="faces">
+</div>
+
+<div class="row">
+<ul>
+<li><a href="#">Contact us</a></li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+
+<div class="row">
+ © 2023 Superent - All rights reserved || Designed By: Roamly
+</div>
+</div>
+</footer>
