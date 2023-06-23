@@ -1,14 +1,18 @@
-
-<div class="row justify-content-center pt-3">
-  <div>
-    <%= form_with url: super_powers_path, method: :get, class: "form-inline d-flex sentence search-bar-width" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control mr-sm-2",
-        placeholder: "Search Super Power"
-       %>
-      <%= submit_tag "Search", name: "", class: "btn-margin-padding my-2 my-sm-0" %>
-    <% end %>
+ <div class="container d-flex justify-content">
+  <div class="column1">
+    <div class="row justify-content-center pt-3">
+        <h1 class="main">Débloque ton super power !</h1>
+      </div>
+        <%= form_with url: super_powers_path, method: :get, class: "form-inline d-flex sentence search-bar-width" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control mr-sm-2",
+            placeholder: "Search Super Power"
+          %>
+          <%= submit_tag "Search", name: "", class: "btn-margin-padding my-2 my-sm-0" %>
+        <% end %>
+        </div>
+    </div>
   </div>
 </div>
 
@@ -39,3 +43,27 @@
     <% end %>
   </div>
 </div>
+
+<footer>
+<div class="footer">
+<h3 class="team">Our team</h3>
+<div class="row">
+  <img alt="Kevin" src="/assets/kevin.png", class="faces">
+  <img alt="Anastasia" src="/assets/nastya.png", class="faces">
+  <img alt="Louhane" src="/assets/louh.png", class="faces">
+  <img alt="Alexandra" src="/assets/alex.png", class="faces">
+</div>
+
+<div class="row">
+<ul>
+<li><a href="#">Contact us</a></li>
+<li><a href="#">Our Services</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+
+<div class="row">
+ © 2023 Superent - All rights reserved || Designed By: Roamly
+</div>
+</div>
+</footer>
