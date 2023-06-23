@@ -1,23 +1,26 @@
 class ReservationsController < ApplicationController
-  # def show
-  #   @reservation = Reservation.find(params[:id])
-  # end
+
+  def show
+    @reservation = Reservation.find(params[:id])
+  end
 
   def new
-    @reservation = Reservation.new
     @super_power = SuperPower.find(params[:super_power_id])
+    @reservation = Reservation.new
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @super_power = SuperPower.find(params[:super_power_id])
     @reservation.user_id = current_user.id
     # @super_power = SuperPower.find(params[:id])
     @reservation.super_power_id = params[:super_power_id]
-    @reservation.price = 10
+    @reservation.price = @super_power.price
     @reservation.status = true
     @reservation.beginning_date = params[:reservation][:beginning_date]
     @reservation.ending_date = params[:reservation][:ending_date]
     @reservation.save!
+    # redirect_to super_power_reservation_path(@reservation)
   end
 
   def edit

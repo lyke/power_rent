@@ -1,0 +1,20 @@
+<div>
+  <h2>Reservation Request :</h2>
+  <%= @reservation.super_power.name %>
+<div class="d-flex">
+<h2>Date :</h2>
+<h2><%= @reservation.beginning_date %></h2>
+<h2>  -  </h2>
+<h2><%= @reservation.ending_date %></h2>
+</div>
+  <h2>Price Details</h2>
+  <%= @reservation.price %>€/Day
+
+</div>
+  <h2>Let's Book</h2>
+<div>
+</div>
+<h3>Reservation Asking by :</h3>
+<%= @reservation.user.name %>
+
+<%= cl_image_tag @reservation.super_power.poster_url.key, height: 300, width: 400, crop: :fill %>

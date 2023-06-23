@@ -5,7 +5,7 @@ class SuperPower < ApplicationRecord
   validates :price, presence: true
   has_one_attached :poster_url
 
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
 
   include PgSearch::Model
 
