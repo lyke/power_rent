@@ -3,7 +3,8 @@
     <div>
       <p class="navbar-brand add-power"><%= link_to "+ Super Power",  new_super_power_path, class: "white-btn" %></p>
     </div>
-    <h1 class="powerent">POWERENT</h1>
+    <%= link_to "POWERENT", super_powers_path, class: "powerent" %>
+    <%# <h1 class="powerent">POWERENT</h1> %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,7 +15,7 @@
             <a class="nav-link icon" href="#">☆</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link icon" href="#">♀︎</a>
+            <%= link_to "♀︎",  dashboard_path, class: "nav-link icon" %>
           </li>
           <li class="nav-item">
             <a class="nav-link icon" href="#">🛒</a>

@@ -1,11 +1,17 @@
 
-<h1 class="sentence">Unlock Your SuperPower !</h1>
-<nav class="navbar navbar-light bg-light">
-  <form class="form-inline d-flex sentence">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search SuperPower" aria-label="Search">
-    <button class="btn-margin-padding my-2 my-sm-0" type="submit">Search</button>
-  </form>
-</nav>
+<div class="row justify-content-center pt-3">
+  <div>
+    <%= form_with url: super_powers_path, method: :get, class: "form-inline d-flex sentence search-bar-width" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control mr-sm-2",
+        placeholder: "Search Super Power"
+       %>
+      <%= submit_tag "Search", name: "", class: "btn-margin-padding my-2 my-sm-0" %>
+    <% end %>
+  </div>
+</div>
+
 <div class="index-grid power-card">
     <% @super_powers.each do |super_power| %>
     <div class="card" style="width: 29rem";>
@@ -22,14 +28,10 @@
             <%= link_to super_power.name, super_power_path(super_power) %>
             </div>
             <div class="card-text">
-              <%= super_power.description %>
+              <%= super_power.description.first(300) + "..." %>
             </div>
 
-            <h2><%= super_power.price %>€</h2>
-
-            <div class="btn-margin-padding ">
-              <%= link_to "Delete", super_power_path(super_power), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "white-btn" %>
-            </div>
+            <h2 class="card-price"><%= super_power.price %>€</h2>
 
         </div>
       </div>

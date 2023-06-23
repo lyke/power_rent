@@ -1,0 +1,45 @@
+<div>
+  <div class="container">
+    <h1>My Profile</h1>
+    <div class="d-flex dashboard-name">
+    <h2 class="dashboard-titles">Name :</h2>
+    <h2 class="p-3"><%= current_user.name%></h2>
+    </div>
+    <h2 class="dashboard-titles">My Reservations :</h2>
+    <%# <% @my_reservations = current_user.resevation.each do |my_reservation| %> %>
+    <%# <ul> %>
+      <%# <li><%= my_reservation.name %></li> %>
+      <%# <% end %> %>
+    <%# </ul> %>
+
+    <h2 class="dashboard-titles">My Super-Powers :</h2>
+
+    <div class="index-grid power-card">
+        <% @super_powers.where(user_id: current_user.id).each do |super_power| %>
+        <div class="card" style="width: 29rem";>
+          <div class="container">
+            <div >
+
+                <div class="card-img-top card_power pt-2 p-auto">
+                  <% if super_power.poster_url.attached? %>
+                    <%= cl_image_tag super_power.poster_url.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
+                  <% end %>
+                </div>
+
+                <div class="card-title">
+                <%= link_to super_power.name, super_power_path(super_power) %>
+                </div>
+                <div class="card-text">
+                  <%= super_power.description.first(300) + "..." %>
+                </div>
+
+                <h2 class="card-price"><%= super_power.price %>€</h2>
+
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

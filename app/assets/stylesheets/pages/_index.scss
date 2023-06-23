@@ -1,3 +1,14 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
+.dashboard-titles {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 54px;
+  color: #B6B5FF;
+}
+.dashboard-name {
+  align-items: center;
+}
