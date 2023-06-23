@@ -11,8 +11,14 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
+    @super_power = SuperPower.find(params[:id])
     @reservation.super_power_id = params[:super_power_id]
+    @reservation.price = @super_power.price
+    
+    @reservation.beginning_date = params[:beginning_date]
+    @reservation.ending_date = params[:ending_date]
     @reservation.save
+
   end
 
   def edit
